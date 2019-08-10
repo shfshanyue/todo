@@ -1,8 +1,31 @@
-.index {
+.home {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
   height: 100vh;
+}
+
+.home .home-block-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.home .home-block {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #f60;
+  margin: 0 10px;
+
+  &.complete {
+    background: #f608;
+  }
+}
+
+.home .home-todo {
+  font-style: italic;
 }

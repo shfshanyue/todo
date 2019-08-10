@@ -30,7 +30,10 @@ class App extends Component {
     }
   }
 
-  componentDidMount () {}
+  componentDidMount () {
+    // 每日目标
+    Taro.setStorageSync('target', 8)
+  }
 
   componentDidShow () {}
 
