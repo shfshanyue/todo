@@ -1,0 +1,16 @@
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  border: 4px solid #f60;
+  font-size: 3rem;
+  color: #f60;
+  font-weight: bold;
+}
+
+.clock.init {
+  border: 0;
+}

@@ -1,11 +1,12 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import Taro from '@tarojs/taro'
+import { View } from '@tarojs/components'
+import Clock from '../../components/clock'
 import './index.less'
 
-export default function Index {
+export default function Index () {
   return (
     <View className='index'>
-      <Text>Hello world!</Text>
+      <Clock init={false} second={160} />
     </View>
   )
 }
