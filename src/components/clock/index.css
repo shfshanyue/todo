@@ -13,7 +13,15 @@
 }
 
 .clock.init {
-  border: 0;
+  border-width: 0;
+}
+
+.clock.rest {
+  border: 4px solid #09f;
+}
+
+.clock.rest .char {
+  color: #09f;
 }
 
 .clock .char {

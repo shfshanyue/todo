@@ -11,17 +11,19 @@ function toTime (second: number): string {
 type Prop = {
   second: number;
   init: boolean;
+  rest: boolean;
   onClick: () => void;
 }
 
 export default function Clock ({
-  second = 1500,
-  init = true,
+  second,
+  init,
+  rest,
   onClick
 }: Prop) {
   return (
-    <View className={`clock ${init ? 'init' : ''}`} style={{
-      backgroundColor: init ? '' : `rgba(255, 100, 0, ${0.5 - second / 1500 * 0.5})`
+    <View className={`clock ${init ? 'init' : ''} ${rest ? 'rest' : ''}`} style={{
+      // backgroundColor: init ? '' : `rgba(255, 100, 0, ${0.5 - second / 1500 * 0.5})`
     }} onClick={onClick}>
       {toTime(second).split('').map((x, i) => <View key={i} className="char">{x}</View>)}
     </View>
