@@ -1,10 +1,11 @@
 import Taro, { useState, useEffect } from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
-import { AtModal, AtModalContent, AtModalAction, AtInput } from "taro-ui"
+import { AtModal, AtModalContent, AtModalAction, AtInput, AtIcon } from "taro-ui"
 import classnames from 'classnames'
-import 'taro-ui/dist/style/components/modal.scss'
-
 import Clock from '../../components/clock'
+
+import 'taro-ui/dist/style/components/modal.scss'
+import 'taro-ui/dist/style/components/icon.scss'
 import './index.less'
 
 export default function Index () {
@@ -60,7 +61,14 @@ export default function Index () {
   }, [run, second])
 
   return (
-    <View className="home">
+    <View
+      className="home"
+    >
+      <View className='at-icon at-icon-settings'></View>
+      <View className='at-icon at-icon-analytics'></View>
+      <View className='at-icon at-icon-help'></View>
+      <View className='at-icon at-icon-list'></View>
+      <View className='at-icon at-icon-history'></View>
       <AtModal isOpened={isOpend}>
         <AtModalContent>
           <AtInput
@@ -95,14 +103,17 @@ export default function Index () {
           setSecond(initSecond)
         }}
       />
-      <Text>今日成就</Text>
+      <Text className="home-focus-tip" style={{
+        opacity: run ? 0 : .3
+      }}>轻触时钟开始关注/放弃</Text>
+      {/* <Text>今日成就</Text>
       <View className="home-block-container">
         {
           Array.from(Array(8)).map((x, i) => (
             <View key={i} className={`home-block ${i < count ? 'complete' : ''}`} />
           ))
         }
-      </View>
+      </View> */}
     </View>
   )
 }

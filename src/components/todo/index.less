@@ -1,0 +1,40 @@
+.todo {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #999;
+
+  .todo-icon-wraper {
+    display: flex;
+    padding: 10px 30px;
+  }
+
+  .todo-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    transition: all .2s;
+    border-radius: 50%;
+    font-size: 24px;
+    border: 2px solid #e8e8e8;
+    color: transparent;
+  }
+
+  .todo-icon.checked {
+    border: none;    
+    color: #fff;
+    background-color: #6190e8;
+  }
+
+  .todo-title {
+    font-size: 32px;
+    color: #111;
+  }
+
+  .todo-detail {
+    color: #999;
+    font-size: 28px;
+  }
+}

@@ -1,4 +1,5 @@
 import { View } from '@tarojs/components'
+import classNames from 'classnames'
 import './index.css'
 
 // second 必须要小于 3600
@@ -12,7 +13,7 @@ type Prop = {
   second: number;
   init: boolean;
   rest: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export default function Clock ({
@@ -22,9 +23,17 @@ export default function Clock ({
   onClick
 }: Prop) {
   return (
-    <View className={`clock ${init ? 'init' : ''} ${rest ? 'rest' : ''}`} style={{
-      // backgroundColor: init ? '' : `rgba(255, 100, 0, ${0.5 - second / 1500 * 0.5})`
-    }} onClick={onClick}>
+    <View
+      className={classNames({
+        clock: true,
+        init,
+        rest
+      })}
+      style={{
+        // backgroundColor: init ? '' : `rgba(255, 100, 0, ${0.5 - second / 1500 * 0.5})`
+      }}
+      onClick={onClick}
+    >
       {toTime(second).split('').map((x, i) => <View key={i} className="char">{x}</View>)}
     </View>
   )
