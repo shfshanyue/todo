@@ -17,28 +17,38 @@ type Prop = {
   level?: number;
   desc?: string;
   pin?: boolean;
+  onCheck: () => void;
 }
 
 function Todo ({
   checked,
   title,
   desc,
+  onCheck,
   pin = false,
   level = 1,
 }: Prop) {
 
   return (
     <View className="todo">
-      <View className="todo-icon-wraper">
+      <View className="todo-icon-wraper" onClick={onCheck}>
         <View className={classNames('todo-icon', { checked })}>
           <Text className="at-icon at-icon-check"></Text>
         </View>
       </View>
       <View className="todo-option">
         <View className="todo-title">
-          {title}
+          <View>{title}</View>
+          {
+            pin &&
+              <View className="todo-icon-pin">
+                <View className="at-icon at-icon-star-2"></View>
+              </View>
+          }
         </View>
-        {desc && <View className="todo-detail">{desc}</View>}
+        {
+          desc && <View className="todo-detail">{desc}</View>
+        }
       </View>
     </View>
   )

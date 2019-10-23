@@ -1,8 +1,8 @@
-import Taro, { useState, useEffect } from '@tarojs/taro'
+import Taro, { useState, useEffect, setPageInfo } from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
 import { AtFab, AtList, AtListItem, AtCheckbox } from 'taro-ui'
 
-import Todo from '../../components/todo'
+import TodoItem from '../../components/todo'
 
 import 'taro-ui/dist/style/components/icon.scss'
 import 'taro-ui/dist/style/components/list.scss'
@@ -12,6 +12,9 @@ import 'taro-ui/dist/style/components/checkbox.scss'
 import './index.less'
 
 export default function Todos () {
+  const [ check, setCheck ] = useState(false)
+  const [ pin ] = useState(true)
+
   return (
     <View>
       <AtList>
@@ -31,11 +34,17 @@ export default function Todos () {
         selectedList={[]}
         onChange={() => {}}
       />
-      <Todo checked={false} title="学习 React" tomatoCount={1} />
+      <TodoItem
+        checked={check}
+        pin={pin}
+        title="学习 React"
+        tomatoCount={1}
+        onCheck={() => setCheck(!check)}
+      />
     </View>
   )
 }
 
 Todos.config = {
-  navigationBarTitleText: '首页'
+  navigationBarTitleText: 'Todo'
 }

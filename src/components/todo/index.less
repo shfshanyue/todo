@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   padding: 16px 0;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid #eee;
 
   .todo-icon-wraper {
     display: flex;
@@ -28,7 +28,16 @@
     background-color: #6190e8;
   }
 
+  .todo-option {
+    flex-grow: 1;
+    padding-right: 24px;
+  }
+
   .todo-title {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 32px;
     color: #111;
   }
@@ -36,5 +45,10 @@
   .todo-detail {
     color: #999;
     font-size: 28px;
+  }
+
+  .todo-icon-pin {
+    font-size: 40px;
+    color: #f60;
   }
 }
