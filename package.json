@@ -44,7 +44,7 @@
     "classnames": "^2.2.6",
     "nerv-devtools": "^1.4.0",
     "nervjs": "^1.4.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "taro-ui": "^2.2.1"
   },
   "devDependencies": {
